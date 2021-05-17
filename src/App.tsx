@@ -1,3 +1,4 @@
+import React from "react";
 import { Dashboard } from "./Components/Dashboard";
 import { Heder } from "./Components/Header";
 import { GlobalStyle } from "./styles/global";
