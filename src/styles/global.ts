@@ -30,6 +30,15 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--background);
     -webkit-font-smoothing: antialiased; //é uma forma de deixar as fontes mais nítidas
   }
+  body, input, textarea, button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; // devido ser o tamanho padrão 
+  }
+  
+  h1, h2, h3, h5, h6, strong {
+    font-weight: 600;
+  }
+
   button {
     cursor: pointer;
   }
