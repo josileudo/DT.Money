@@ -3,6 +3,7 @@ import { Dashboard } from "./Components/Dashboard";
 import { Header } from "./Components/Header";
 import Modal from "react-modal"
 import { GlobalStyle } from "./styles/global";
+import { NewTransactionModal } from "./Components/NewTransactionModal";
 
 Modal.setAppElement('#root') // Ele passa o modal por cima da página
 
@@ -20,13 +21,10 @@ export function App() {
   return (
     <>
       <Header onOpenNewTransactionModal = {handleOpenNewTransactionModal}/>
-      <Modal
-        isOpen={isNewTransactionModalOpen}
-        onRequestClose={handleCloseNewTransactionModal}
-      >
-        <h2>Cadastrar Nova Transação</h2>
-      </Modal>
       <Dashboard />
+      <NewTransactionModal 
+        isOpen = {isNewTransactionModalOpen} 
+        onRequestClose = {handleCloseNewTransactionModal}/>
       <GlobalStyle />
     </>
   );
