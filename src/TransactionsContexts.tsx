@@ -19,7 +19,7 @@ interface TransactionsProviderProps {
 
 interface TransactionsContextData {
   transactions: TransactionsProps[]
-  createTransaction: (transaction: TransactionInput) => void
+  createTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
 export const TransactionsContext = createContext<TransactionsContextData>(
@@ -34,8 +34,17 @@ export function TransactionsProvider({children}:TransactionsProviderProps) {
       .then(response =>setTransactions(response.data.transactions))
   }, []) //será executado sempre que minha página iniciar
 
-  function createTransaction(transactions : TransactionInput) {
-    api.post("/transactions",transactions)
+  async function createTransaction(transactionInput : TransactionInput) {
+    const response = await api.post("/transactions", { 
+      ...transactionInput,
+      createdAt: new Date()
+    })
+    const {transaction} = response.data
+
+    setTransactions([
+      ...transactions,
+       transaction //aqui eu adiciono um novo vetor (imutabilidade) 
+    ])
   }
   return (
     <TransactionsContext.Provider value = {{transactions, createTransaction}}>
