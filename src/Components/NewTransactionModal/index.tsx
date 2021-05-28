@@ -49,7 +49,6 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
       </button> 
 
       <Container onSubmit = {handleCreateNewTransaction}>  
-            
         <h2>Cadastrar transação</h2>
         <input          
           placeholder = "Título"  
