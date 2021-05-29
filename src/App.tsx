@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import { Dashboard } from "./Components/Dashboard";
 import { Header } from "./Components/Header";
 import Modal from "react-modal"
 import { GlobalStyle } from "./styles/global";
 import { NewTransactionModal } from "./Components/NewTransactionModal";
-import { TransactionsContext, TransactionsProvider } from "./TransactionsContexts";
+import {TransactionsProvider } from "./hooks/useTransaction";
 
 Modal.setAppElement('#root') // Ele passa o modal por cima da página
 

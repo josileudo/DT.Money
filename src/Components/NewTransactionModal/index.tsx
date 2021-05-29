@@ -1,7 +1,7 @@
 import {FormEvent, useState, useContext } from "react"
 import Modal from "react-modal"
 import { api } from "../../Services/api"
-import { TransactionsContext } from "../../TransactionsContexts"
+import { TransactionsContext } from "../../hooks/useTransaction"
 
 import closeImg from "../../assets/close.svg"
 import incomeImg from "../../assets/income.svg"
