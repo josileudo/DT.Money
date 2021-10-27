@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 
   [disabled]{
     opacity: 0.6;
-    cursor: not-not-allowed;
+    cursor: not-allowed;
   }
   .react-modal-overlay{
     background: rgba(0,0,0,0.5);
